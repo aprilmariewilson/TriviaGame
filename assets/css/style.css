@@ -1,0 +1,149 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;	
+
+}
+body {
+	background-color: #aaa;
+}
+ h1 {
+    font-family:'Game of Thrones', serif;
+		text-align: center;
+		font-size: 3.5em;
+}
+ul {
+    list-style: none;
+}
+li {
+    font-family:'Game of Thrones', serif;
+		font-size: 2em;
+		margin-left: 2%;
+}
+input[type=radio] {
+    border: 0px;
+    width: 20px;
+    height: 2em;
+}
+p {
+		font-family:'Game of Thrones', serif;
+		font-size: 1.2em;
+	
+}
+
+ .quizContainer {
+	 background-image: url("https://img.wallpapersafari.com/desktop/1280/1024/39/33/gNwcdO.jpg");
+	
+    border-radius: 6px;
+		width: 80%;
+    margin: auto;
+    padding-top: 5px;
+    -moz-box-shadow: 10px 10px 5px #888;
+    -webkit-box-shadow: 10px 10px 5px #888;
+    box-shadow: 10px 10px 5px #888;
+    position: relative;
+}
+.nextButton {
+    box-shadow: 3px 3px 5px #888;
+    border-radius: 6px;
+    width: 150px;
+    height: 80px;
+    text-align: center;
+    background-color: lightgrey;
+    color: #222;
+    font-family:'Game of Thrones', serif;
+    position: relative;
+    margin: auto;
+		padding-top: 15px;
+		padding-bottom: 10px;
+		font-size: 1.2em;
+}
+.question {
+    font-family:'Game of Thrones', serif;
+    font-size: 2em;
+    width: 90%;
+    height: auto;
+    margin: auto;
+    border-radius: 6px;
+    background-color: lightgrey;
+    text-align: center;
+}
+.quizMessage {
+    background-color: darkred;
+    border-radius: 6px;
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    padding: 2px;
+    font-family:'Game of Thrones', serif;
+    color: darkred;
+}
+.choiceList {
+    font-family: 'Game of Thrones' serif;
+		color: darkred;
+}
+.result {
+    width: 30%;
+    height: auto;
+    border-radius: 6px;
+    background-color: linen;
+    margin: auto;
+    text-align: center;
+    font-family:'Game of Thrones', serif;
+}
+.wrapper {
+	margin: 0;
+	padding: 0;
+}
+.main {
+	margin-top: 3%;
+	margin-right: 1%;
+	margin-left: 1%;
+	padding-right: 0%;
+	width: 60%;
+	float: left;
+	-moz-box-shadow: 10px 10px 5px #888;
+	-webkit-box-shadow: 10px 10px 5px #888;
+	box-shadow: 10px 10px 5px #888;
+
+}
+
+.image1{
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.aside {
+	background-image: url("https://i.pinimg.com/736x/39/fe/0a/39fe0abde0c3c28d81210787b896a594.jpg");
+	margin-left: 2%;
+	padding: 0;
+	-moz-box-shadow: 10px 10px 5px #888;
+	-webkit-box-shadow: 10px 10px 5px #888;
+	box-shadow: 10px 10px 5px #888;
+
+	float: left;
+	width: 25%;
+	text-align: center;
+
+}
+.image2 {
+	width: 99.9%;
+	padding: 0;
+	margin-bottom: 2%;
+}
+.motto-img{
+	width: 99.9%;
+	padding: 0;
+	margin: 0;
+}
+@media only screen and (max-width:900px){
+
+	.main { 
+		width: 100%;
+	}
+	.aside {
+		width: 100%;
+	}
+}
+

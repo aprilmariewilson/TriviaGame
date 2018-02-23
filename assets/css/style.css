@@ -74,7 +74,7 @@ p {
     text-align: center;
 }
 .quizMessage {
-    background-color: darkred;
+    background-color: lightgray;
     border-radius: 6px;
     width: 30%;
     margin: auto;
@@ -82,6 +82,12 @@ p {
     padding: 2px;
     font-family:'Game of Thrones', serif;
     color: darkred;
+}
+#timer{
+	text-align: center;
+	width: 30%;
+	font-family:'Game of Thrones', serif;
+	float: right; 
 }
 .choiceList {
     font-family: 'Game of Thrones' serif;

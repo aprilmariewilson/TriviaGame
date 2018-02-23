@@ -1,55 +1,64 @@
 var	questions = [{
 	question: "What is the surname given to babies born out of wedlock in Dorne?",
 	choices: ["Rivers","Stone","Sand", "Waters"],
-//	images: [],
-	correct: 2
+	correctAnswer: 2
 },{
 	question: "'The Mountain'is the nickname for which character?",
 	choices: ["Sandor Clegane", "Gerold Clegane", "Oberyn Martell", "Gregor Clegane"],
-//	images: [],
-	correct: 3
+	correctAnswer: 3
 },{
 	question: "Who is the Lord Commander of the Kingsguard at the beginning of Game of Thrones?",
 	choices: ["Ser Barristan Selmy", "Ser Loras Tyrell", "Ser Jaime Lannister", "ser Jorah Mormont"],
-//	images:[],
-	correct: 0
+	correctAnswer: 0
 },{
 	question: "Who was Margaery Tyrell's first husband?",
 	choices: ["Tommen Baratheon", "Renly Baratheon", "Joffrey Baratheon", "Stannis Baratheon"],
-//	images: [],
-	correct: 1
+	correctAnswer: 1
 },{
 	question: "Who is known as 'The King Beyond the Wall'?",
 	choices: ["Stannis Baratheon", "Tormund Giantsbane", "Mance Rayder", "The Night King"],
-//	images:[],
-	correct: 2
+	correctAnswer: 2
 },{
 	question: "How many times has Sansa Stark been married?",
 	choices: ["Once", "Twice", "Three times", "None"],
-	//images: [],
-	correct: 1
+	correctAnswer: 1
 },{
 	question: "Who is the ruler of the Iron Islands at the beginning of Game of Thrones?",
 	choices: ["Balon Greyjoy", "Euron Greyjoy", "Yara Greyjoy", "Aeron Greyjoy"],
-//	images: [],
-	correct: 0
+	correctAnswer: 0
 },{
 	question: "Who was the Mad King's firstborn son?",
 	choices: ["Rhaegar Targaryen", "Aegon Targaryen", "Aemon Targaryen", "Viserys Targaryen"],
-	//images: [],
-	correct: 0
+	correctAnswer: 0
 },{
 	question: "Who delivered the fatal blow to the King in the North, Robb Stark?",
 	choices:[ "Ramsay Bolten", "Roose Bolton", "Walder Frey", "Alliser Thorne"],
-	//images:[],
-	correct: 1
+	correctAnswer: 1
 }];
 var currentQuestion = 0;
 var correctAnswers = 0;
+var totalQuestions = 0;
 var quizOver = false;
 
 $(document).ready(function () {
+	
+	var count=30;
 
+	var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+	
+	function timer()
+	{
+		count=count-1;
+		if (count <= 0)
+		{
+			 clearInterval(counter);
+			 //counter ended, do something here
+			 displayCurrentQuestion()
+			 return;
+		}
+	
+			$(".timer").html(counter)
+	}
     // Display the first question
     displayCurrentQuestion();
     $(this).find(".quizMessage").hide();
@@ -68,16 +77,18 @@ $(document).ready(function () {
                 $(document).find(".quizMessage").hide();
 
                 if (value == questions[currentQuestion].correctAnswer) {
-                    correctAnswers++;
+										correctAnswers++;
+										totalQuestions++;
+										showScore();
                 }
 
                 currentQuestion++; // Since we have already displayed the first question on DOM ready
                 if (currentQuestion < questions.length) {
-                    displayCurrentQuestion();
+										displayCurrentQuestion();
+										totalQuestions++;
+										showScore();
                 } else {
                     displayScore();
-                    //                    $(document).find(".nextButton").toggle();
-                    //                    $(document).find(".playAgainButton").toggle();
                     // Change the text in the next button to ask if user wants to play again
                     $(document).find(".nextButton").text("Play Again?");
                     quizOver = true;
@@ -88,7 +99,7 @@ $(document).ready(function () {
             $(document).find(".nextButton").text("Next Question");
             resetQuiz();
             displayCurrentQuestion();
-            hideScore();
+            showScore();
         }
     });
 
@@ -97,12 +108,12 @@ $(document).ready(function () {
 // This displays the current question AND the choices
 function displayCurrentQuestion() {
 
-    console.log("In display current Question");
 
     var question = questions[currentQuestion].question;
     var questionClass = $(document).find(".quizContainer > .question");
     var choiceList = $(document).find(".quizContainer > .choiceList");
-    var numChoices = questions[currentQuestion].choices.length;
+		var numChoices = questions[currentQuestion].choices.length;
+		showScore();
 
     // Set the questionClass text to the current question
     $(questionClass).text(question);
@@ -119,15 +130,17 @@ function displayCurrentQuestion() {
 
 function resetQuiz() {
     currentQuestion = 0;
-    correctAnswers = 0;
-    hideScore();
+		correctAnswers = 0;
+		totalQuestions = 0;
+    showScore();
 }
 
 function displayScore() {
     $(document).find(".quizContainer > .result").text("You scored: " + correctAnswers + " out of: " + questions.length);
-    $(document).find(".quizContainer > .result").show();
+  
 }
 
-function hideScore() {
-    $(document).find(".result").hide();
+function showScore() {
+		$(".correct").text("Correct: " + correctAnswers);
+		$(".total").text("Total: " + totalQuestions)
 }

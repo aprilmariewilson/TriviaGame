@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Game of Thrones";
+  src: url("../css/Thrones.ttf") format("truetype");
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -84,12 +89,10 @@ p {
 }
 .result {
     width: 30%;
-    height: auto;
-    border-radius: 6px;
-    background-color: linen;
-    margin: auto;
+    height: auto;	
     text-align: center;
-    font-family:'Game of Thrones', serif;
+		font-family:'Game of Thrones', serif;
+		float: right;
 }
 .wrapper {
 	margin: 0;

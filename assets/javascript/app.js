@@ -2,7 +2,7 @@ var questions = [{
 	question: "What is the surname given to babies born out of wedlock in Dorne?",
 	choices: ["Rivers", "Stone", "Sand", "Waters"],
 	correctAnswer: 2
-}, {
+},{
 	question: "'The Mountain'is the nickname for which character?",
 	choices: ["Sandor Clegane", "Gerold Clegane", "Oberyn Martell", "Gregor Clegane"],
 	correctAnswer: 3
@@ -45,6 +45,15 @@ var totalQuestions = 0;
 var quizOver = false;
 
 $(document).ready(function () {
+
+var scoreSetup = function() {
+	console.log('inside scoreSetup')
+	$('.result').append('<div class="correct"><p>"Correct: "' + correctAnswers +' </p> </div>');
+	$('.result').append('<div class="total"><p>"Total: "' + totalQuestions +' </p> </div>');
+}
+
+scoreSetup();
+
 	var interval;
 	function timer() {
 		var timerDiv = $("#timer");
@@ -53,7 +62,7 @@ $(document).ready(function () {
 		timerDiv.text('Time Left: ' + counter);
 		interval = setInterval(function () {
 			counter--;
-			console.log('counter', counter);
+			// console.log('counter', counter);
 			if (counter >= 0) {
 				timerDiv.text('Time Left: ' + counter);
 			}
@@ -74,16 +83,16 @@ $(document).ready(function () {
 	// On clicking next, display the next question
 	$(this).find(".nextButton").on("click", function () {
 		if (!quizOver) {
-			timer();
+		
 			value = $("input[type='radio']:checked").val();
-
+				console.log('value: ', value);
 			if (value == undefined) {
 				$(document).find(".quizMessage").text("Please select an answer");
 				$(document).find(".quizMessage").show();
 			} else {
 				// TODO: Remove any message -> not sure if this is efficient to call this each time....
 				$(document).find(".quizMessage").hide();
-
+				timer();
 				if (value == questions[currentQuestion].correctAnswer) {
 					correctAnswers++;
 					showScore();
@@ -99,14 +108,16 @@ $(document).ready(function () {
 					// Change the text in the next button to ask if user wants to play again
 					$(document).find(".nextButton").text("Play Again?");
 					quizOver = true;
+					stopTimer();
 				}
 			}
 		} else { // quiz is over and clicked the next button (which now displays 'Play Again?'
 			quizOver = false;
 			$(document).find(".nextButton").text("Next Question");
 			resetQuiz();
+			scoreSetup();
 			displayCurrentQuestion();
-			showScore();
+			timer();
 		}
 	});
 
@@ -139,7 +150,10 @@ function resetQuiz() {
 	currentQuestion = 0;
 	correctAnswers = 0;
 	totalQuestions = 0;
+	$('.result').empty();
+	// scoreSetup();
 	showScore();
+	// timer();	
 }
 
 function displayScore() {

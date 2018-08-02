@@ -3,40 +3,40 @@ var questions = [{
 	choices: ["Rivers", "Stone", "Sand", "Waters"],
 	correctAnswer: 2
 },{
-	question: "'The Mountain'is the nickname for which character?",
+	question: "' The Mountain ' is the nickname for which character?",
 	choices: ["Sandor Clegane", "Gerold Clegane", "Oberyn Martell", "Gregor Clegane"],
 	correctAnswer: 3
 }, {
-	question: "Who is the Lord Commander of the Kingsguard at the beginning of Game of Thrones?",
+	question: "Who is the  Lord  Commander of the  Kingsguard at the beginning of Game of Thrones?",
 	choices: ["Ser Barristan Selmy", "Ser Loras Tyrell", "Ser Jaime Lannister", "ser Jorah Mormont"],
 	correctAnswer: 0
 }, {
-	question: "Who was Margaery Tyrell's first husband?",
+	question: "Who was  Margaery  Tyrell's first husband?",
 	choices: ["Tommen Baratheon", "Renly Baratheon", "Joffrey Baratheon", "Stannis Baratheon"],
 	correctAnswer: 1
 }, {
-	question: "Who is known as 'The King Beyond the Wall'?",
+	question: "Who is known as  ' The King Beyond the Wall ' ?",
 	choices: ["Stannis Baratheon", "Tormund Giantsbane", "Mance Rayder", "The Night King"],
 	correctAnswer: 2
 }, {
-	question: "How many times has Sansa Stark been married?",
+	question: "How many times has  Sansa  Stark been married?",
 	choices: ["Once", "Twice", "Three times", "None"],
 	correctAnswer: 1
 }, {
-	question: "Who is the ruler of the Iron Islands at the beginning of Game of Thrones?",
+	question: "Who is the ruler of the  Iron  Islands at the beginning of Game of Thrones?",
 	choices: ["Balon Greyjoy", "Euron Greyjoy", "Yara Greyjoy", "Aeron Greyjoy"],
 	correctAnswer: 0
 }, {
-	question: "Who was the Mad King's firstborn son?",
+	question: "Who was the  Mad  King's  firstborn son?",
 	choices: ["Rhaegar Targaryen", "Aegon Targaryen", "Aemon Targaryen", "Viserys Targaryen"],
 	correctAnswer: 0
 }, {
-	question: "Who delivered the fatal blow to the King in the North, Robb Stark?",
+	question: "Who delivered the fatal blow to the  King in the  North, Robb Stark?",
 	choices: ["Ramsay Bolten", "Roose Bolton", "Walder Frey", "Alliser Thorne"],
 	correctAnswer: 1
 },{
-	question: "Which household possesses the banner of a moon and a falcon?",
-	choices: ["House Greyjoy","House Arryn", "House Lannister", "HouseKarstark"],
+	question: "Which  household  possesses the banner of a  moon and a  falcon?",
+	choices: ["House Greyjoy","House Arryn", "House Lannister", "House Karstark"],
 	correctAnswer: 1
 }];
 var currentQuestion = 0;

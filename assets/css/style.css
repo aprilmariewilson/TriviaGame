@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Game of Thrones";
   src: url("../css/Thrones.ttf") format("truetype");
+  
 }
 
 * {
@@ -8,12 +9,17 @@
 	margin: 0;
 	padding: 0;	
 
+
 }
-body {
-	background-color: #aaa;
+.game {
+	background-color: rgba(180,180,158,0.687);
+}
+.intro {
+	background-color: rgba(181, 153, 117, 0.687);
 }
  h1 {
-    font-family:'Game of Thrones', serif;
+		font-family:'Game of Thrones', serif;
+		word-spacing: 1.1rem;
 		text-align: center;
 		font-size: 3.5em;
 }
@@ -21,7 +27,8 @@ ul {
     list-style: none;
 }
 li {
-    font-family:'Game of Thrones', serif;
+		font-family:'Game of Thrones', serif;
+		word-spacing: 1.1rem;
 		font-size: 2em;
 		margin-left: 2%;
 }
@@ -32,6 +39,7 @@ input[type=radio] {
 }
 p {
 		font-family:'Game of Thrones', serif;
+		word-spacing: 1.1rem;
 		font-size: 1.2em;
 	
 }
@@ -64,7 +72,8 @@ p {
 		font-size: 1.2em;
 }
 .question {
-    font-family:'Game of Thrones', serif;
+		font-family:'Game of Thrones', serif;
+		word-spacing: 1.1rem;
     font-size: 2em;
     width: 90%;
     height: auto;
@@ -90,7 +99,8 @@ p {
 	float: right; 
 }
 .choiceList {
-    font-family: 'Game of Thrones' serif;
+		font-family: 'Game of Thrones' serif;
+		/* word-spacing: 1.1rem; */
 		color: darkred;
 }
 .result {
@@ -139,7 +149,7 @@ p {
 .image2 {
 	width: 99.9%;
 	padding: 0;
-	margin-bottom: 2%;
+	margin: 2% 0 2% 2%;
 }
 .motto-img{
 	width: 99.9%;
